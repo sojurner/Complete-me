@@ -1,21 +1,26 @@
-const { assert } = require('chai');
-const GamePiece = require('../lib/Node.js');
+import { expect } from 'chai';
+import Node from '../lib/node';
 
-describe ('Node', function () {
+describe('NODE', () => {
+  let node;
 
-  it('should exist', function() {
-	
-	});
+  beforeEach(() => {
+    node = new Node('pig');
+  })
 
-	it('should endWord should be false by default', function() {
-	
-	});
+  it('should exist', () => {
+    expect(node).to.exist;
+  })
 
-	it('should add nodes', function() {
-	
-	});
+  it('accept data and assign it to letter property, it shall', () => {
+    expect(node.letter).to.equal('pig');
+  })
 
-	it('should add nodes', function() {
-	
-	})
-})
+  it('endOfWord property shall be set to null', () => {
+    expect(node.endOfWord).to.equal(null);
+  })
+
+  it('an empty object the default child property it shall be', () => {
+    expect(node.child).to.deep.equal({});
+  })
+});
