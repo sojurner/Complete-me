@@ -1,0 +1,24 @@
+body {
+
+    font-family: Codec;
+}
+
+@font-face {
+    font-family: Codec;
+    src: url(Codec-Warm-ExtraLight-trial.ttf);
+  }
+
+.complete {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.user-input {
+    text-align: center;
+}
+
+.search-box {
+    height: 2rem;
+    width: 20rem;
+}
