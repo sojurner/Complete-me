@@ -5,15 +5,15 @@ describe('NODE', () => {
   let node;
 
   beforeEach(() => {
-    node = new Node('pig');
+    node = new Node('p');
   })
 
   it('should exist', () => {
     expect(node).to.exist;
   })
 
-  it('accept data and assign it to letter property, it shall', () => {
-    expect(node.letter).to.equal('pig');
+  it('accept and assign a letter to the letter property, it shall', () => {
+    expect(node.letter).to.equal('p');
   })
 
   it('endOfWord property shall be set to null', () => {

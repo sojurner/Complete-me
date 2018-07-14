@@ -1,24 +1,40 @@
-body {
+* {
+    font-family: Alcubierre;
+}
 
-    font-family: Codec;
+body {
+    background-image: url(https://i.imgur.com/j8IEfV4.gif);
+    background-repeat: no-repeat;
+    background-size: 120rem;
 }
 
 @font-face {
-    font-family: Codec;
-    src: url(Codec-Warm-ExtraLight-trial.ttf);
+    font-family: Alcubierre;
+    src: url(Alcubierre.otf);
   }
 
 .complete {
-    font-size: 3rem;
+    letter-spacing: 1.5rem;
+    font-size: 5rem;
+    color: #dffdf0;
     text-align: center;
     margin-top: 10rem;
 }
+
+.search-box:hover {
+    border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9 !important;
+    box-shadow: 2px 2px #a0a0a0
+}
+
+input[type="text"], textarea {
+    background-color : #d6f2e6; 
+  }
 
 .user-input {
     text-align: center;
 }
 
 .search-box {
-    height: 2rem;
-    width: 20rem;
+    height: 3rem;
+    width: 30rem;
 }
