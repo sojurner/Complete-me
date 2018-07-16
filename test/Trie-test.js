@@ -149,8 +149,8 @@ describe('Trie', () => {
     })
   })
 
-  describe.skip('Delete', () =>{
-    
+  describe('Delete', () =>{
+
     it('shall delete a word from the trie and decrement word count', () => {
       
       trie.insert('stars')
