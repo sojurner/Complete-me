@@ -71,6 +71,7 @@ describe('Trie', () => {
     })
 
     it('duplicate words, it shall not count', function() {
+      
       expect(trie.count()).to.equal(0);
       
       trie.insert('pizza');
@@ -82,8 +83,7 @@ describe('Trie', () => {
       expect(trie.count()).to.equal(1);
     })
 
-    it('number of words in the trie, it shall track', () => {
-      
+    it('number of words in the trie, it shall track', () => { 
       const array = ['did', 'you', 'know', 'that', 'velcro', 'has']
       
       trie.populate(array)
@@ -95,15 +95,11 @@ describe('Trie', () => {
   describe('Suggest and Find', () => {
 
     it('exists, the method shall', () => {
-    
       expect(trie.suggest).to.exist;
-
     })
 
     it('exists, the method shall', () => {
-      
       expect(trie.find).to.exist;
-
     })
 
     it('offer suggestions from word prefix, it shall', () => {
@@ -113,17 +109,15 @@ describe('Trie', () => {
       trie.insert('paulina');
 
       expect(trie.count()).to.equal(3);
-
       expect(trie.suggest('pau')).to.deep.equal(['paul', 'paulie', 'paulina']);
 
       trie.insert('to')
-      trie.insert('tom');
+      trie.insert('tim');
       trie.insert('tommy');
       trie.insert('tommay');
 
       expect(trie.count()).to.equal(7);
-
-      expect(trie.suggest('to')).to.deep.equal(['to', 'tom', 'tommy', 'tommay']);
+      expect(trie.suggest('to')).to.deep.equal(['to', 'tommy', 'tommay']);
     })
   });
 
@@ -134,7 +128,6 @@ describe('Trie', () => {
     })
 
     it('an array of words it shall accept', () => {
-      
       const array = ['slammer', 'the', 'brogrammer', 'mashing', 'keys', 'like', 'a', 'sledgehammer']
       
       trie.populate(array)
@@ -143,7 +136,6 @@ describe('Trie', () => {
     })
 
     it('the dictionary of apple, it shall harness', () => {
-      
       const text = '/usr/share/dict/words';
       const dictionary = fs.readFileSync(text).toString().trim().split('\n');
       
@@ -154,6 +146,20 @@ describe('Trie', () => {
       trie.suggest('ridiculous')
       
       expect(trie.suggest('ridiculous')).to.deep.equal(['ridiculous', 'ridiculously', 'ridiculousness']);
+    })
+  })
+
+  describe.skip('Delete', () =>{
+    
+    it('shall delete a word from the trie and decrement word count', () => {
+      
+      trie.insert('stars')
+      trie.insert('star')
+      trie.insert('starstruck')
+      trie.delete('stars')
+
+      expect(trie.suggest('sta')).to.deep.equal(['star', 'starstruck'])
+      expect(trie.count()).to.deep.equal(2)
     })
   })
 })
