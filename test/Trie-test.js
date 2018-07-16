@@ -157,7 +157,7 @@ describe('Trie', () => {
       trie.insert('star')
       trie.insert('starstruck')
       trie.delete('stars')
-
+      
       expect(trie.suggest('sta')).to.deep.equal(['star', 'starstruck'])
       expect(trie.count()).to.deep.equal(2)
     })
