@@ -1,8 +1,8 @@
 {
-  "name": "@sojurner/Complete-me",
-  "version": "1.0.1",
+  "name": "@sojurner/complete-me",
+  "version": "1.0.0",
   "description": "Foundation boilerplate",
-  "main": "./lib/Trie.js",
+  "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
